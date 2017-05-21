@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>百度指数爬取工具 | Songgeb</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="持续更新 写在前面 软件介绍 实现功能 软件界面 推算模式 精确模式   你需要数据？ 注意： txt格式说明 csv格式说明   联系方式 开源？ 未来… 参考链接   持续更新2017年01月18日 该工具暂时无法使用。 原因：百度指数平台针对相同IP地址，当频繁访问百度指数页面时会反复要求输入验证码。 写在前面百度指数爬取工具(BDIndexSpider)是开发出来给在做科研的女朋友用的">
+<meta name="keywords" content="百度指数,Webdriver">
+<meta property="og:type" content="article">
+<meta property="og:title" content="百度指数爬取工具">
+<meta property="og:url" content="http://songgeb.github.io/2017/01/29/百度指数爬取工具/index.html">
+<meta property="og:site_name" content="Songgeb">
+<meta property="og:description" content="持续更新 写在前面 软件介绍 实现功能 软件界面 推算模式 精确模式   你需要数据？ 注意： txt格式说明 csv格式说明   联系方式 开源？ 未来… 参考链接   持续更新2017年01月18日 该工具暂时无法使用。 原因：百度指数平台针对相同IP地址，当频繁访问百度指数页面时会反复要求输入验证码。 写在前面百度指数爬取工具(BDIndexSpider)是开发出来给在做科研的女朋友用的">
+<meta property="og:image" content="http://songgeb.github.io/images/软件主界面.jpeg">
+<meta property="og:image" content="http://songgeb.github.io/images/软件结束状态.jpeg">
+<meta property="og:image" content="http://songgeb.github.io/images/推算模式.gif">
+<meta property="og:image" content="http://songgeb.github.io/images/推算结果.jpeg">
+<meta property="og:image" content="http://songgeb.github.io/images/精确模式.gif">
+<meta property="og:image" content="http://songgeb.github.io/images/精确模式结果.jpeg">
+<meta property="og:image" content="http://songgeb.github.io/images/txt关键词例子.jpeg">
+<meta property="og:image" content="http://songgeb.github.io/images/csv例子.jpeg">
+<meta property="og:updated_time" content="2017-05-21T10:41:11.574Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="百度指数爬取工具">
+<meta name="twitter:description" content="持续更新 写在前面 软件介绍 实现功能 软件界面 推算模式 精确模式   你需要数据？ 注意： txt格式说明 csv格式说明   联系方式 开源？ 未来… 参考链接   持续更新2017年01月18日 该工具暂时无法使用。 原因：百度指数平台针对相同IP地址，当频繁访问百度指数页面时会反复要求输入验证码。 写在前面百度指数爬取工具(BDIndexSpider)是开发出来给在做科研的女朋友用的">
+<meta name="twitter:image" content="http://songgeb.github.io/images/软件主界面.jpeg">
+  
+    <link rel="alternate" href="/atom.xml" title="Songgeb" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Songgeb</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://songgeb.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-百度指数爬取工具" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/01/29/百度指数爬取工具/" class="article-date">
+  <time datetime="2017-01-30T04:00:46.000Z" itemprop="datePublished">2017-01-29</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/原创/">原创</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      百度指数爬取工具
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- toc -->
+<ul>
+<li><a href="#持续更新">持续更新</a></li>
+<li><a href="#写在前面">写在前面</a></li>
+<li><a href="#软件介绍">软件介绍</a></li>
+<li><a href="#实现功能">实现功能</a></li>
+<li><a href="#软件界面">软件界面</a><ul>
+<li><a href="#推算模式">推算模式</a></li>
+<li><a href="#精确模式">精确模式</a></li>
+</ul>
+</li>
+<li><a href="#你需要数据">你需要数据？</a><ul>
+<li><a href="#注意">注意：</a></li>
+<li><a href="#txt格式说明">txt格式说明</a></li>
+<li><a href="#csv格式说明">csv格式说明</a></li>
+</ul>
+</li>
+<li><a href="#联系方式">联系方式</a></li>
+<li><a href="#开源">开源？</a></li>
+<li><a href="#未来">未来…</a></li>
+<li><a href="#参考链接">参考链接</a></li>
+</ul>
+<!-- tocstop -->
+<h2 id="持续更新"><a href="#持续更新" class="headerlink" title="持续更新"></a>持续更新</h2><p>2017年01月18日</p>
+<p>该工具暂时无法使用。</p>
+<p>原因：百度指数平台针对相同IP地址，当频繁访问百度指数页面时会反复要求输入验证码。</p>
+<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>百度指数爬取工具(BDIndexSpider)是开发出来给在做科研的女朋友用的，顺道应付毕业，做出点实用性强的软件才是最重要的。软件开发基本经历如下几个阶段：</p>
+<ol>
+<li><p>写代码</p>
+<p> 2016年3月初构思，开始写代码，三个星期后，完成了大体框架(听着好像挺大的工程似的，其实很菜)，基本可以正常运行实现百度指数的精确爬取。</p>
+</li>
+<li><p>写论文</p>
+<p> 3月的最后一个星期，写毕业论文，自己看了都受不了，完全不是写论文的料。</p>
+</li>
+<li><p>改论文、修bug</p>
+<p> 4月的大部分时间，在改论文的挣扎中度过，最终版仍然很烂。 至于软件，这段时间不间断地优化了些大小的bug。同时尝试加入了效率更高的估算模式。</p>
+</li>
+<li><p>优化</p>
+<p> 4月剩下的时间，优化了下后来加入的估算模式。看了点《代码大全》，试图重构一下巨烂的代码结构，水平还是不够，只是做了些轻微调整。</p>
+</li>
+<li><p>稳定运行</p>
+<p> 5月初，对登录部分进行较大的调整，将原来各自独立的两种模式进行适当的代码重用和合并。现在软件的已经可以稳定运行。</p>
+</li>
+<li><p>持续更新</p>
+<p> 至今（如果工具无法使用我会在文章中更新，默认一直可以对大众提供服务，特别是用作科研工作的学生和老师），该工具已逐步修复了若干bug，为十余人抓取几千个关键词数据。开发成员也由最初的1人增加到3人。开发过程也引入git多人工作流和maven代码管理等贴近商业开发的流程。只要有人需要服务我们就会持续更新下去。(注意：免费！免费！免费！)</p>
+</li>
+</ol>
+<h2 id="软件介绍"><a href="#软件介绍" class="headerlink" title="软件介绍"></a>软件介绍</h2><p>软件使用Java + Selenium Webdriver自动化测试框架 + Tesseract OCR框架实现。</p>
+<p>该部分以截图和动画为主，多说无益，show you。</p>
+<h2 id="实现功能"><a href="#实现功能" class="headerlink" title="实现功能"></a>实现功能</h2><p>目前<strong><em>仅</em></strong>实现:</p>
+<ol>
+<li><p>关键词全国范围的整体趋势指数</p>
+</li>
+<li><p>最终结果是每天的指数数据（下面有图片介绍）</p>
+</li>
+<li><p>不能抓取月度数据、周数据、热门数据等其他数据</p>
+</li>
+</ol>
+<p>提供两种抓取模式:</p>
+<ul>
+<li><p><strong>精确模式</strong></p>
+</li>
+<li><p><strong>推算模式</strong></p>
+</li>
+</ul>
+<h2 id="软件界面"><a href="#软件界面" class="headerlink" title="软件界面"></a>软件界面</h2><p><img src="/images/软件主界面.jpeg" alt="初始状态"></p>
+<p><img src="/images/软件结束状态.jpeg" alt="结束状态"></p>
+<h3 id="推算模式"><a href="#推算模式" class="headerlink" title="推算模式"></a>推算模式</h3><p><img src="/images/推算模式.gif" alt="推算模式"></p>
+<p><img src="/images/推算结果.jpeg" alt="推算模式结果"></p>
+<h3 id="精确模式"><a href="#精确模式" class="headerlink" title="精确模式"></a>精确模式</h3><p><img src="/images/精确模式.gif" alt="精确模式"></p>
+<p><img src="/images/精确模式结果.jpeg" alt="精确模式结果"></p>
+<h2 id="你需要数据"><a href="#你需要数据？" class="headerlink" title="你需要数据？"></a>你需要数据？</h2><p>如果你有数据抓取的需要，那么：</p>
+<ol>
+<li><p>按照下面提出的要求把关键词文件发给我，我帮你抓取。（不提供软件）</p>
+</li>
+<li><p>免费！免费！免费！</p>
+</li>
+</ol>
+<p>支持数据类型</p>
+<ul>
+<li>csv</li>
+<li>txt</li>
+</ul>
+<h3 id="注意"><a href="#注意：" class="headerlink" title="注意："></a>注意：</h3><ol>
+<li><p>目前数据抓取只能按整月抓取，所以最后的“日”数据有无都可。</p>
+</li>
+<li><p>结束年月要小于当前月份。如当前2016-05，则结束年月最大是2016-04</p>
+</li>
+</ol>
+<h3 id="txt格式说明"><a href="#txt格式说明" class="headerlink" title="txt格式说明"></a>txt格式说明</h3><p><strong>注意</strong>：三部分内容，每部分内容之间使用一个#号隔开，文件格式为txt<br><img src="/images/txt关键词例子.jpeg" alt="txt关键词例子"></p>
+<h3 id="csv格式说明"><a href="#csv格式说明" class="headerlink" title="csv格式说明"></a>csv格式说明</h3><p><img src="/images/csv例子.jpeg" alt="csv关键词例子"></p>
+<h2 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h2><p>QQ：419151330</p>
+<p>问题讨论群QQ：151961408</p>
+<h2 id="开源"><a href="#开源？" class="headerlink" title="开源？"></a>开源？</h2><p>开源是早晚的事，但目前代码写的太烂，自己都不满意，所以优化好后，开源出来看看有木有人鸟我。</p>
+<h2 id="未来"><a href="#未来…" class="headerlink" title="未来…"></a>未来…</h2><p>如果有别的需求的朋友，比如按照区域查询，查询媒体指数，甚至是查询其他的指数(360指数、微指数等)，会考虑加入更多功能。(PS:其实主要是看自己心情了。)</p>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://songgeb.github.io/2017/01/29/百度指数爬取工具/" data-id="cj2yqa9n5000l8clsuad97qpj" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Webdriver/">Webdriver</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/百度指数/">百度指数</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/01/29/技术英语随手记/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          技术英语随手记
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/01/29/命令备忘/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">命令备忘</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/原创/">原创</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/备忘/">备忘</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/思考/">思考</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blog/">Blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Coud9/">Coud9</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webdriver/">Webdriver</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Xcode/">Xcode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-page/">github page</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS/">iOS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iPhone屏幕/">iPhone屏幕</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pod/">pod</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/卓老板/">卓老板</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技术英语/">技术英语</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/百度指数/">百度指数</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/科学主义/">科学主义</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/罗辑思维/">罗辑思维</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/适配移动端/">适配移动端</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Blog/" style="font-size: 10px;">Blog</a> <a href="/tags/Coud9/" style="font-size: 10px;">Coud9</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Webdriver/" style="font-size: 10px;">Webdriver</a> <a href="/tags/Xcode/" style="font-size: 10px;">Xcode</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github-page/" style="font-size: 10px;">github page</a> <a href="/tags/iOS/" style="font-size: 10px;">iOS</a> <a href="/tags/iPhone屏幕/" style="font-size: 10px;">iPhone屏幕</a> <a href="/tags/pod/" style="font-size: 10px;">pod</a> <a href="/tags/卓老板/" style="font-size: 10px;">卓老板</a> <a href="/tags/技术英语/" style="font-size: 10px;">技术英语</a> <a href="/tags/百度指数/" style="font-size: 10px;">百度指数</a> <a href="/tags/科学主义/" style="font-size: 10px;">科学主义</a> <a href="/tags/罗辑思维/" style="font-size: 10px;">罗辑思维</a> <a href="/tags/适配移动端/" style="font-size: 10px;">适配移动端</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">5</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/02/17/iPhone屏幕分辨率汇总/">iOS琐碎知识整理</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/08/iOS应用跳转到app store应用的方法/">iOS应用跳转到app store应用的方法</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/30/搭建只需浏览器的博客系统/">搭建只用浏览器就可以写作的博客系统</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/29/科学生活/">科学生活</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/29/技术英语随手记/">技术英语随手记</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 songgeb<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
