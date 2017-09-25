@@ -106,17 +106,17 @@
 <li>真的是有序列表</li>
 </ol>
 </blockquote>
-<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a><strong>引用</strong></h2><p>  如果你需要引用小段别处的句子，那面就要用到引用格式，只需在文本前加入&gt;这种尖括号(大于号)即可</p>
+<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a><strong>引用</strong></h2><p>  如果你需要引用小段别处的句子，那面就要用到引用格式，只需在文本前加入>这种尖括号(大于号)即可</p>
 <blockquote>
 <p><strong>门前大桥下，游过一群虾，快来快来数一数，一只38~</strong></p>
 </blockquote>
-<h2 id="图片与连接"><a href="#图片与连接" class="headerlink" title="图片与连接"></a><strong>图片与连接</strong></h2><p> 图片连接和插入图片的语法很像，区别在于一个!号<br> 图片为<img src="" alt="">{ImgCap}{/ImgCap}</p>
-<p> 链接为<a href=""></a></p>
+<h2 id="图片与连接"><a href="#图片与连接" class="headerlink" title="图片与连接"></a><strong>图片与连接</strong></h2><p> 图片连接和插入图片的语法很像，区别在于一个!号<br> 图片为!<a href=""></a>{ImgCap}{/ImgCap}</p>
+<p> 链接为[]()</p>
 <blockquote>
 <h4 id="插入链接"><a href="#插入链接" class="headerlink" title="插入链接"></a>插入链接</h4><p><a href="http://baidu.com" target="_blank" rel="external">Baidu</a></p>
 <h4 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h4><p><img src="/images/TIM图片20170925161014.gif" alt="图片"></p>
 </blockquote>
-<h2 id="粗体与斜体"><a href="#粗体与斜体" class="headerlink" title="粗体与斜体"></a><strong>粗体与斜体</strong></h2><p>Markdown的粗体和斜体也非常简单，用两个<em>包含一段文本就是粗体的，用一个</em>包含的一段文本就是斜体</p>
+<h2 id="粗体与斜体"><a href="#粗体与斜体" class="headerlink" title="粗体与斜体"></a><strong>粗体与斜体</strong></h2><p>Markdown的粗体和斜体也非常简单，用两个[<em>]包含一段文本就是粗体的，用一个</em>包含的一段文本就是斜体</p>
 <blockquote>
 <p><strong>这是粗体哦</strong></p>
 <p><em>这是斜体哦</em></p>
@@ -154,7 +154,7 @@
 </tbody>
 </table>
 </blockquote>
-<h2 id="代码框"><a href="#代码框" class="headerlink" title="代码框"></a><strong>代码框</strong></h2><p>   如何在文章中优雅的引用代码框？在Markdown中很简单，只需要用号 把中间的代码包起来，<br>    <code>public static void bubble_terminal(Comparable[]a){
+<h2 id="代码框"><a href="#代码框" class="headerlink" title="代码框"></a><strong>代码框</strong></h2><p>   如何在文章中优雅的引用代码框？在Markdown中很简单，只需要用`号 把中间的代码包起来，<br>    <code>public static void bubble_terminal(Comparable[]a){
         boolean flag=true;
         int pos=a.length,k;
         while (flag) {
@@ -177,7 +177,7 @@
 <p><img src="/images/_s.jpg" alt=""></p>
 <blockquote>
 <ol>
-<li>如果文本中需要引入像星号、井号这类的符号而不是用于起到修饰作用，那么如何做呢？<br>2.排版好难看啊~~审美不足~关键是我想将例子都进行居中，但是居中后特殊符号的作用都消失了，why?</li>
+<li>如果文本中需要引入像星号、井号这类的符号而不是用于起到修饰作用，那么如何做呢？<br>2.排版好难看啊~~审美不足~关键是我想将例子都进行居中，但是居中后特殊符号的作用都消失了，why?<br>答复：<br>[2.] Markdown 可以利用反斜杠来插入一些在语法中有其它意义的符号，例如：如果你想要用星号加在文字旁边的方式来做出强调效果，你可以在星号的前面加上反斜杠，Markdown支持以下这些符号前面加上反斜杠来帮助插入普通符号：<br>\   反斜线<br>`   反引号<br>*   星号<br>_   底线<br>{}  花括号<br>[]  方括号<br>()  括弧<br>#   井字号<br>+   加号<br>-   减号<br>.   英文句点<br>!   惊叹号</li>
 </ol>
 </blockquote>
 
