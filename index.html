@@ -135,7 +135,9 @@
 <p><strong>冒泡排序的实现过程</strong></p>
 <p>样例：对{ 6, 5, 3, 1, 8, 7, 2, 4 } 进行冒泡排序</p>
 <p><img src="/images/73冒泡.gif" alt=""></p>
-
+<p>备注：<br>less函数和exch函数</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">less</span><span class="params">(Comparable a,Comparable b)</span></span>&#123;</div><div class="line">		<span class="keyword">return</span> a.compareTo(b)&lt;<span class="number">0</span>;</div><div class="line">	&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">exch</span><span class="params">(Comparable[] a,<span class="keyword">int</span> i,<span class="keyword">int</span> j)</span></span>&#123;</div><div class="line">		Comparable temp=a[i];</div><div class="line">		a[i]=a[j];</div><div class="line">		a[j]=temp;</div><div class="line">	&#125;</div></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
