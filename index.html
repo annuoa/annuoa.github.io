@@ -154,21 +154,22 @@
 </tbody>
 </table>
 </blockquote>
-<h2 id="代码框"><a href="#代码框" class="headerlink" title="代码框"></a><strong>代码框</strong></h2><p>   如何在文章中优雅的引用代码框？在Markdown中很简单，只需要用号 把中间的代码包起来，<br>    <code>public static void bubble_terminal(Comparable[]a){ boolean flag=true;
-        int pos=a.length,k;
-        while (flag) {
-            flag=false;
-            k=pos;
-            for (int i = 1; i &lt; k; i++) {
-                if (less(a[i], a[i-1])) {
-                    exch(a, i, i-1);
-                    flag=true;
-                    pos=i;
-                }
+<h2 id="代码框"><a href="#代码框" class="headerlink" title="代码框"></a><strong>代码框</strong></h2><p>   如何在文章中优雅的引用代码框？在Markdown中很简单，只需要用号 把中间的代码包起来，</p>
+<pre><code>public static void bubble_terminal(Comparable[]a){ boolean flag=true;
+    int pos=a.length,k;
+    while (flag) {
+        flag=false;
+        k=pos;
+        for (int i = 1; i &lt; k; i++) {
+            if (less(a[i], a[i-1])) {
+                exch(a, i, i-1);
+                flag=true;
+                pos=i;
             }
         }
-    }</code></p>
-<h2 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a><strong>分割线</strong></h2><p>分割线的语法只需要三个*号即可，例如</p>
+    }
+}
+</code></pre><h2 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a><strong>分割线</strong></h2><p>分割线的语法只需要三个*号即可，例如</p>
 <hr>
 <blockquote>
 <p> Markdown的在日常用的语法先补充这些，多写多练即可配合好用的工具，写起东西来肯定会星云流水~后续会继续补充哦</p>
@@ -179,10 +180,11 @@
 <li>如果文本中需要引入像星号、井号这类的符号而不是用于起到修饰作用，那么如何做呢？<br>2.排版好难看啊~~审美不足~关键是我想将例子都进行居中，但是居中后特殊符号的作用都消失了，why?</li>
 </ol>
 </blockquote>
-<h2 id="回复"><a href="#【回复】" class="headerlink" title="【回复】"></a><strong>【回复】</strong></h2><p> [1] Markdown可以利用反斜杠来插入一些在语法中有其他意义的符号，例如：你想要用星号加在文字旁边的方式来做出强调效果，你可以在星号的前面加上反斜杠： *literal asterisks *<br> Markdown支持以下这些符号前面加上反斜杠来帮助插入普通的符号：</p>
+<h2 id="回复"><a href="#【回复】" class="headerlink" title="【回复】"></a><strong>【回复】</strong></h2><p>【1】 Markdown可以利用反斜杠来插入一些在语法中有其他意义的符号，例如：你想要用星号加在文字旁边的方式来做出强调效果，你可以在星号的前面加上反斜杠： *literal asterisks *<br> Markdown支持以下这些符号前面加上反斜杠来帮助插入普通的符号：</p>
 <blockquote>
 <p>\ 反斜杠<br> ` 反引号<br> * 星号<br> _ 底线<br> {} 花括号<br> [] 方括号<br> () 括弧<br> # 井字号<br>\ + 加号<br>\ - 减号<br> . 英文句点<br> ! 惊叹号</p>
 </blockquote>
+<h2 id="参考"><a href="#【参考】" class="headerlink" title="【参考】"></a><strong>【参考】</strong></h2><p><a href="http://www.appinn.com/markdown/#backslash" target="_blank" rel="external">markdown语法说明</a></p>
 
       
     </div>
