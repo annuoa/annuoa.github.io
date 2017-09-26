@@ -9,12 +9,12 @@
 <meta name="keywords" content="Markdown 小知识">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Markdown">
-<meta property="og:url" content="http://annuoa.github.io/2017/09/25/Markdown/index.html">
+<meta property="og:url" content="http://annuoa.github.io/2017/09/24/Markdown/index.html">
 <meta property="og:site_name" content="Annuoa">
 <meta property="og:description" content="Markdown语法的简要规则 标题标题是每篇文章中常用的格式，在Markdown中，若一段文字被定义为标题，只要在这段文字前加#即可，总共六级标题建议在#后加一个空格，这是最标准的Markdown语法。  #一级标题 ##二级标题 ###三级标题 ####四级标题  #####五级标题 ######六级标题  列表在Markdown下，列表的显示只需要在文字前面加上-或*即可变为无序列表，有序列">
 <meta property="og:image" content="http://annuoa.github.io/images/TIM图片20170925161014.gif">
 <meta property="og:image" content="http://annuoa.github.io/images/_s.jpg">
-<meta property="og:updated_time" content="2017-09-26T02:26:08.181Z">
+<meta property="og:updated_time" content="2017-09-26T03:30:49.361Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Markdown">
 <meta name="twitter:description" content="Markdown语法的简要规则 标题标题是每篇文章中常用的格式，在Markdown中，若一段文字被定义为标题，只要在这段文字前加#即可，总共六级标题建议在#后加一个空格，这是最标准的Markdown语法。  #一级标题 ##二级标题 ###三级标题 ####四级标题  #####五级标题 ######六级标题  列表在Markdown下，列表的显示只需要在文字前面加上-或*即可变为无序列表，有序列">
@@ -69,8 +69,8 @@
       <div class="outer">
         <section id="main"><article id="post-Markdown" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/09/25/Markdown/" class="article-date">
-  <time datetime="2017-09-25T19:29:54.000Z" itemprop="datePublished">2017-09-25</time>
+    <a href="/2017/09/24/Markdown/" class="article-date">
+  <time datetime="2017-09-24T19:29:54.000Z" itemprop="datePublished">2017-09-24</time>
 </a>
     
   </div>
@@ -161,21 +161,22 @@
 </table>
 </blockquote>
 <h2 id="代码框"><a href="#代码框" class="headerlink" title="代码框"></a><strong>代码框</strong></h2><p>   如何在文章中优雅的引用代码框？在Markdown中很简单，只需要用号 把中间的代码包起来，</p>
-<pre><code>public static void bubble_terminal(Comparable[]a){ boolean flag=true;
-    int pos=a.length,k;
-    while (flag) {
-        flag=false;
+<pre><code class="java"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">bubble_terminal</span><span class="params">(Comparable[]a)</span></span>{ <span class="keyword">boolean</span> flag=<span class="keyword">true</span>;
+    <span class="keyword">int</span> pos=a.length,k;
+    <span class="keyword">while</span> (flag) {
+        flag=<span class="keyword">false</span>;
         k=pos;
-        for (int i = 1; i &lt; k; i++) {
-            if (less(a[i], a[i-1])) {
-                exch(a, i, i-1);
-                flag=true;
+        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; k; i++) {
+            <span class="keyword">if</span> (less(a[i], a[i-<span class="number">1</span>])) {
+                exch(a, i, i-<span class="number">1</span>);
+                flag=<span class="keyword">true</span>;
                 pos=i;
             }
         }
     }
 }
-</code></pre><h2 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a><strong>分割线</strong></h2><p>分割线的语法只需要三个*号即可，例如</p>
+</code></pre>
+<h2 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a><strong>分割线</strong></h2><p>分割线的语法只需要三个*号即可，例如</p>
 <hr>
 <blockquote>
 <p> Markdown的在日常用的语法先补充这些，多写多练即可配合好用的工具，写起东西来肯定会星云流水~后续会继续补充哦</p>
@@ -195,7 +196,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://annuoa.github.io/2017/09/25/Markdown/" data-id="cj7zz5d7v000bb9lshdr0pw3g" class="article-share-link">Share</a>
+      <a data-url="http://annuoa.github.io/2017/09/24/Markdown/" data-id="cj7zz5d7v000bb9lshdr0pw3g" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Markdown-小知识/">Markdown 小知识</a></li></ul>
@@ -206,10 +207,19 @@
     
 <nav id="article-nav">
   
+    <a href="/2017/09/25/冒泡排序/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          冒泡排序
+        
+      </div>
+    </a>
   
-    <a href="/2017/09/25/冒泡排序/" id="article-nav-older" class="article-nav-link-wrap">
+  
+    <a href="/2017/08/03/待查知识点/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">冒泡排序</div>
+      <div class="article-nav-title">待查知识点</div>
     </a>
   
 </nav>
