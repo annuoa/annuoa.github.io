@@ -87,23 +87,40 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>:|<br>|插入排序|已知最好的为O(n(logn)^2)|O(n)|由步长而定|O(1)|不稳定|</p>
-<p>b</p>
-<h2 id="java代码"><a href="#java代码" class="headerlink" title="**java代码:|"></a>**java代码:|</h2><p>|插入排序|已知最好的为O(n(logn)^2)|O(n)|由步长而定|O(1)|不稳定|</p>
-<h2 id="java代码实"><a href="#java代码实" class="headerlink" title="**java代码实:|"></a>**java代码实:|</h2><p>|插入排序|已知最好的为O(n(logn)^2)|O(n)|由步长而定|O(1)|不稳定|</p>
-<p>备注</p>
-<h2 id="java代"><a href="#java代" class="headerlink" title="**java代:|"></a>**java代:|</h2><p>|插入排序|已知最好的为O(n(logn)^2)|O(n)|由步长而定|O(1)|不稳定|</p>
-<p>备注：</p>
-<h2 id="java"><a href="#java" class="headerlink" title="**java:|"></a>**java:|</h2><p>|插入排序|已知最好的为O(n(logn)^2)|O(n)|由步长而定|O(1)|不稳定|</p>
-<p>备注：</p>
-<h2 id="jav"><a href="#jav" class="headerlink" title="**jav:|"></a>**jav:|</h2><p>|插入排序|已知最好的为O(n(logn)^2)|O(n)|由步长而定|O(1)|不稳定|</p>
-<p>备注：</p>
-<h2 id="ja"><a href="#ja" class="headerlink" title="**ja:|"></a>**ja:|</h2><p>|插入排序|已知最好的为O(n(logn)^2)|O(n)|由步长而定|O(1)|不稳定|</p>
-<p>备注：</p>
-<h2 id="j"><a href="#j" class="headerlink" title="**j:|"></a>**j:|</h2><p>|插入排序|已知最好的为O(n(logn)^2)|O(n)|由步长而定|O(1)|不稳定|</p>
-<p>备注：</p>
-<h2 id=""><a href="#" class="headerlink" title="**:|"></a>**:|</h2><p>|插入排序|已知最好的为O(n(logn)^2)|O(n)|由步长而定|O(1)|不稳定|</p>
-<p>备注：<br>    最差时间复杂度和平均时间复杂度 都是根据步长序列的不同而不同的</p>
+        <h2 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a><strong>希尔排序</strong></h2><blockquote>
+<p>希尔排序(Shell Sort)是插入排序的一种。也称缩小增量排序，是直接插入排序算法的一种更高效的改进版本。希尔排序是非稳定排序算法。它的基本思想是先将整个待排元素序列分割成若干个子序列（由相隔某个“增量”的元素组成的）分别进行直接插入排序，然后依次缩减增量再进行排序，待整个序列中的元素基本有序（增量足够小）时，再对全体元素进行一次直接插入排序。因为直接插入排序在元素基本有序的情况下（接近最好情况），效率是很高的。   </p>
+</blockquote>
+<h2 id="操作方法"><a href="#操作方法" class="headerlink" title="操作方法"></a><strong>操作方法</strong></h2><blockquote>
+<ol>
+<li>先取一个小于N的整数h作为第一个增量，将所有序号相隔h的数组放在同一个组中；</li>
+<li>在各组内进行直接插入排序；</li>
+<li>取第二个增量h2\&lt;h，重复上述的分组和排序；</li>
+<li>直到所取的增量为1，即所有记录放在同一组中进行直接插入排序为止。</li>
+</ol>
+</blockquote>
+<h2 id="性质"><a href="#性质" class="headerlink" title="性质"></a><strong>性质</strong></h2><table>
+<thead>
+<tr>
+<th style="text-align:center">性质</th>
+<th style="text-align:center">最差时间复杂度</th>
+<th style="text-align:center">最优时间复杂度</th>
+<th style="text-align:center">平均时间复杂度</th>
+<th style="text-align:center">所需辅助空间</th>
+<th style="text-align:center">稳定性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">插入排序</td>
+<td style="text-align:center">已知最好的为O(n(logn)^2)</td>
+<td style="text-align:center">O(n)</td>
+<td style="text-align:center">由步长而定</td>
+<td style="text-align:center">O(1)</td>
+<td style="text-align:center">不稳定</td>
+</tr>
+</tbody>
+</table>
+<p>备注：<br>    最差时间复杂度和平均时间复杂度 都是由步长序列的不同而不同</p>
 <h2 id="java代码实现"><a href="#java代码实现" class="headerlink" title="java代码实现"></a><strong>java代码实现</strong></h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">shellSort</span><span class="params">(Comparable[]a)</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> n=a.length;</div><div class="line">	<span class="keyword">int</span> h=<span class="number">1</span>;</div><div class="line">	<span class="keyword">while</span> (h&lt;n) &#123;</div><div class="line">		h=<span class="number">3</span>*h+<span class="number">1</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">while</span> (h&gt;=<span class="number">1</span>) &#123;</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = h; i &lt; n; i++) &#123;</div><div class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j = i; j &gt;=h&amp;&amp;less(a[j], a[j-h]); j-=h) &#123;<span class="comment">//注意边界条件j&gt;=h</span></div><div class="line">				exch(a, j-h, j);</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		h=h/<span class="number">3</span>;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="希尔排序实现过程"><a href="#希尔排序实现过程" class="headerlink" title="希尔排序实现过程"></a><strong>希尔排序实现过程</strong></h2><p><img src="/images/SHELL.gif" alt=""></p>
 
