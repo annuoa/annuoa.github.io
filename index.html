@@ -61,6 +61,90 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-快速排序" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/09/26/快速排序/" class="article-date">
+  <time datetime="2017-09-26T19:39:17.000Z" itemprop="datePublished">2017-09-26</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/SORT/">SORT</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/26/快速排序/">快速排序</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a><strong>基本思想</strong></h2><blockquote>
+<p>通过一趟排序将要排序的数据分割成独立的两部分，其中一部分的所有数据都比另外一部分的所有数据要小，然后按此方法对这两部分数据分别进行快速排序，整个排序过程可以递归进行，以此达到整个数据变成有序序列。</p>
+<h2 id="操作方法"><a href="#操作方法" class="headerlink" title="操作方法"></a><strong>操作方法</strong></h2><ol>
+<li>从序列中挑选出一个元素作为”基准”(pivot)，通常选择第一个元素或最后一个元素</li>
+<li>把所有比基准值小得元素放在基准前面，所有比基准值大的元素放在基准的后面(相同元素可以到任一边)，这个称为分区(partition)操作。</li>
+<li>对每个分区递归地进行步骤1~2，递归的结束条件是序列的大小是0或者1，这时整体已经被排好序了。</li>
+</ol>
+</blockquote>
+<h2 id="性质"><a href="#性质" class="headerlink" title="性质"></a><strong>性质</strong></h2><table>
+<thead>
+<tr>
+<th>分类</th>
+<th style="text-align:center">最差时间复杂度</th>
+<th style="text-align:center">最优时间复杂度</th>
+<th style="text-align:center">平均时间复杂度</th>
+<th style="text-align:center">所需辅助空间</th>
+<th style="text-align:center">稳定性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>内部比较排序</td>
+<td style="text-align:center">O(n^2)</td>
+<td style="text-align:center">O(nlogn)</td>
+<td style="text-align:center">O(nlogn)</td>
+<td style="text-align:center">O(logn)</td>
+<td style="text-align:center">不稳定</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>备注：</p>
+<ol>
+<li>最差时间复杂度—-每次选择的基准都是最大的或最小的元素，导致每次只划分出了一个分区，需要进行n-1词划分才能结束递归，时间复杂度为O(n^2)</li>
+<li>最优时间复杂度—-每次选择的基准都是中位数，这样每次都均匀的划分出两个分区，只需要logn次划分就能结束递归，时间复杂度为O(nlogn)</li>
+<li>所需辅助空间—-主要是递归造成的栈空间的使用(用来保存left和right等局部变量)，取决于递归树的深度，一般为O(logn)，最差为O(n)</li>
+</ol>
+</blockquote>
+<h2 id="java代码实现"><a href="#java代码实现" class="headerlink" title="java代码实现"></a><strong>java代码实现</strong></h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sort</span><span class="params">(Comparable[] a)</span> </span>&#123;</div><div class="line">		sort(a, <span class="number">0</span>, a.length - <span class="number">1</span>);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sort</span><span class="params">(Comparable[] a, <span class="keyword">int</span> lo, <span class="keyword">int</span> hi)</span> </span>&#123;</div><div class="line">		<span class="keyword">if</span> (hi &lt;= lo)</div><div class="line">			<span class="keyword">return</span>;</div><div class="line">		<span class="keyword">int</span> j = partition(a, lo, hi);</div><div class="line">		sort(a, lo, j - <span class="number">1</span>);</div><div class="line">		sort(a, j + <span class="number">1</span>, hi);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">partition</span><span class="params">(Comparable[] a, <span class="keyword">int</span> lo, <span class="keyword">int</span> hi)</span> </span>&#123;</div><div class="line">		<span class="keyword">int</span> i = lo, j = hi + <span class="number">1</span>;<span class="comment">//此处j的值为hi+1后续--j做准备</span></div><div class="line">		Comparable v = a[lo];</div><div class="line">		<span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</div><div class="line">			<span class="keyword">while</span> (less(a[++i], v)) &#123;</div><div class="line">				<span class="keyword">if</span> (i == hi) &#123;</div><div class="line">					<span class="keyword">break</span>;</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">			<span class="keyword">while</span> (less(v, a[--j])) &#123;</div><div class="line">				<span class="keyword">if</span> (j == lo) &#123;</div><div class="line">					<span class="keyword">break</span>;</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">			<span class="keyword">if</span> (i &gt;= j) &#123;</div><div class="line">				<span class="keyword">break</span>;</div><div class="line">			&#125;</div><div class="line">			exch(a, i, j);</div><div class="line">		&#125;</div><div class="line">		exch(a, lo, j);<span class="comment">//将最左值和j所在位置的值进行交换</span></div><div class="line">		<span class="keyword">return</span> j;</div><div class="line">	&#125;</div></pre></td></tr></table></figure>
+<p>##<strong>快速排序的实现过程</strong></p>
+<p>该图例是将最后一个元素作为基准元素进行交换的</p>
+<p><img src="/images/quicksort.gif" alt=""></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://annuoa.github.io/2017/09/26/快速排序/" data-id="cj82fd64t000ib9lsj88qtm23" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/快速排序-java/">快速排序 java</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-冒泡排序" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/09/25/冒泡排序/" class="article-date">
