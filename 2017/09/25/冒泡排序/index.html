@@ -6,14 +6,14 @@
   <title>冒泡排序 | Annuoa</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="基本思想：  冒泡排序是一种及其简单的排序算法，它重复的走访要排序的元素，一次比较相邻两个元素，如果他们的顺序错误就把他们调换过来，直到没有元素需要交换，排序即完成。该算法名字的来历是因为越小的元素会经由交换慢慢浮到数列的顶端。  操作方法：   比较相邻的元素，如果前一个比后一个要大，则需要进行交换； 对每一对相邻的元素做同样的工作，从开始第一对到结果最后一对，则最后一个元素为最大的数； 针对所">
-<meta name="keywords" content="排序 冒泡 java">
+<meta name="keywords" content="交换排序  java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="冒泡排序">
 <meta property="og:url" content="http://annuoa.github.io/2017/09/25/冒泡排序/index.html">
 <meta property="og:site_name" content="Annuoa">
 <meta property="og:description" content="基本思想：  冒泡排序是一种及其简单的排序算法，它重复的走访要排序的元素，一次比较相邻两个元素，如果他们的顺序错误就把他们调换过来，直到没有元素需要交换，排序即完成。该算法名字的来历是因为越小的元素会经由交换慢慢浮到数列的顶端。  操作方法：   比较相邻的元素，如果前一个比后一个要大，则需要进行交换； 对每一对相邻的元素做同样的工作，从开始第一对到结果最后一对，则最后一个元素为最大的数； 针对所">
 <meta property="og:image" content="http://annuoa.github.io/images/73冒泡.gif">
-<meta property="og:updated_time" content="2017-09-26T07:38:09.913Z">
+<meta property="og:updated_time" content="2017-09-27T07:53:49.710Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="冒泡排序">
 <meta name="twitter:description" content="基本思想：  冒泡排序是一种及其简单的排序算法，它重复的走访要排序的元素，一次比较相邻两个元素，如果他们的顺序错误就把他们调换过来，直到没有元素需要交换，排序即完成。该算法名字的来历是因为越小的元素会经由交换慢慢浮到数列的顶端。  操作方法：   比较相邻的元素，如果前一个比后一个要大，则需要进行交换； 对每一对相邻的元素做同样的工作，从开始第一对到结果最后一对，则最后一个元素为最大的数； 针对所">
@@ -73,7 +73,7 @@
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Sort/">Sort</a>
+    <a class="article-category-link" href="/categories/SORT/">SORT</a>
   </div>
 
   </div>
@@ -132,7 +132,7 @@
 <ol>
 <li>最简单的冒泡排序算法(直接两两比较，然后互相交换即可)</li>
 </ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">bubble</span><span class="params">(Comparable[]a)</span></span>&#123;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; a.length; i++) &#123;</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; a.length-i; j++) &#123;</div><div class="line">			<span class="keyword">if</span> (less(a[j], a[j-<span class="number">1</span>])) &#123;</div><div class="line">				exch(a, j-<span class="number">1</span>, j);</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">public static void bubble(Comparable[]a)&#123;</div><div class="line">	for (int i = 0; i &lt; a.length; i++) &#123;</div><div class="line">		for (int j = 1; j &lt; a.length-i; j++) &#123;</div><div class="line">			if (less(a[j], a[j-1])) &#123;</div><div class="line">				exch(a, j-1, j);</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>2.冒泡排序算法的改进（设置标记变量flag，如果没有出现交换则表明排序已完成，则不需要继续）</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">bubble_1</span><span class="params">(Comparable[]a)</span></span>&#123;</div><div class="line">	<span class="keyword">boolean</span> flag=<span class="keyword">true</span>;<span class="comment">//标记变量</span></div><div class="line">	<span class="keyword">int</span> k=a.length;</div><div class="line">	<span class="keyword">while</span>(flag)&#123;</div><div class="line">		flag=<span class="keyword">false</span>;</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; k; j++) &#123;</div><div class="line">			<span class="keyword">if</span> (less(a[j], a[j-<span class="number">1</span>])) &#123;</div><div class="line">				exch(a, j-<span class="number">1</span>, j);</div><div class="line">				flag=<span class="keyword">true</span>;</div><div class="line">			&#125;</div><div class="line">			k--;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>3.冒泡排序算法的继续改进(设置标记变量flag，用于记录每趟排序中最后一次进行交换的位置，由于pos位置之后的记录均已交换到位，所以下一趟排序时只需要扫描到pos的位置即可)</p>
@@ -149,7 +149,7 @@
       <a data-url="http://annuoa.github.io/2017/09/25/冒泡排序/" data-id="cj811d1o0000fb9lsal3i2p6o" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/排序-冒泡-java/">排序 冒泡 java</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/交换排序-java/">交换排序  java</a></li></ul>
 
     </footer>
   </div>
