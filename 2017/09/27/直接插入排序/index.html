@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Annuoa">
 <meta property="og:description" content="基本思想 每步将一个待排序的记录，按照其关键码值的大小插入前面已经排序的文件中适当的位置，知道全部插入为止。插入排序方法分直接插入排序和折半插入排序两种，这里只介绍直接插入排序。  操作方法  从第一个元素开始，该元素可以认为已经被排序； 取出下一个元素，在已经排序的元素序列中从后向前扫描； 如果该元素(已排序)大于新元素，将该元素移到下一位置 重复步骤3，直到找到已排序的元素小于或者等于新元素的">
 <meta property="og:image" content="http://annuoa.github.io/images/插入排序.gif">
-<meta property="og:updated_time" content="2017-09-27T07:54:06.357Z">
+<meta property="og:updated_time" content="2017-09-28T02:47:44.097Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="直接插入排序">
 <meta name="twitter:description" content="基本思想 每步将一个待排序的记录，按照其关键码值的大小插入前面已经排序的文件中适当的位置，知道全部插入为止。插入排序方法分直接插入排序和折半插入排序两种，这里只介绍直接插入排序。  操作方法  从第一个元素开始，该元素可以认为已经被排序； 取出下一个元素，在已经排序的元素序列中从后向前扫描； 如果该元素(已排序)大于新元素，将该元素移到下一位置 重复步骤3，直到找到已排序的元素小于或者等于新元素的">
@@ -127,7 +127,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="java代码实现"><a href="#java代码实现" class="headerlink" title="java代码实现"></a><strong>java代码实现</strong></h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">insertionSort</span><span class="params">(Comparable[]a)</span></span>&#123;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; a.length; i++) &#123;</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = i; (j &gt;=<span class="number">0</span>)&amp;&amp;(less(a[j], a[j-<span class="number">1</span>])); j--) &#123;</div><div class="line">			exch(a, j-<span class="number">1</span>, j);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="java代码实现"><a href="#java代码实现" class="headerlink" title="java代码实现"></a><strong>java代码实现</strong></h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">insertionSort</span><span class="params">(Comparable[]a)</span></span>&#123;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; a.length; i++) &#123;</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = i; (j &gt;<span class="number">0</span>)&amp;&amp;(less(a[j], a[j-<span class="number">1</span>])); j--) &#123;<span class="comment">//注意边界条件j&gt;0</span></div><div class="line">			exch(a, j-<span class="number">1</span>, j);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="直接插入排序的实现过程"><a href="#直接插入排序的实现过程" class="headerlink" title="直接插入排序的实现过程"></a><strong>直接插入排序的实现过程</strong></h2><p><img src="/images/插入排序.gif" alt=""></p>
 
       
