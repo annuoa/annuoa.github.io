@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Category: SORT | Annuoa</title>
+  <title>Annuoa</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="Annuoa">
-<meta property="og:url" content="http://annuoa.github.io/categories/SORT/index.html">
+<meta property="og:url" content="http://annuoa.github.io/page/2/index.html">
 <meta property="og:site_name" content="Annuoa">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Annuoa">
@@ -61,152 +61,73 @@
       <div class="outer">
         <section id="main">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/09/29/归并排序/" class="archive-article-date">
-  <time datetime="2017-09-29T14:16:34.000Z" itemprop="datePublished">Sep 29</time>
+    <article id="post-Untitled" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/11/Untitled/" class="article-date">
+  <time datetime="2017-07-12T00:32:12.000Z" itemprop="datePublished">2017-07-11</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/python/">python</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
     <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/29/归并排序/">归并排序</a>
+      <a class="article-title" href="/2017/07/11/Untitled/">python函数</a>
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/09/27/堆排序/" class="archive-article-date">
-  <time datetime="2017-09-28T01:13:10.000Z" itemprop="datePublished">Sep 27</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/27/堆排序/">堆排序</a>
-    </h1>
-  
+        <h2 id="1round函数"><a href="#1-round函数" class="headerlink" title="1.round函数"></a>1.round函数</h2><p> round函数是python的内置函数，在哪里都能用，对数字进行四舍五入。<br> round(number[,ndigits])<br> round对传入对数据进行四舍五入，如果ngigits不传，默认就是0（就是保留整数部分）<br> ，ndigits&lt;0的时候是来对整数部分进行四舍五入，返回的结果是浮点数。</p>
+<pre><code>eg:
+    round(0.5)   #1.0
+    round(-0.5)  #-1.0
+    round(3.4)   #3.0
+    round(3.5)   #4.0
+    round(3.6)   #4.0
+    round(3.6,0) #4.0
+    round(1241757,-3) #1242000.0
+</code></pre><h3 id="round的陷阱"><a href="#round的陷阱" class="headerlink" title="round的陷阱"></a>round的陷阱</h3><pre><code>round(1.675,2)  #1.68
+round(2.675,2)  #2.67
+此处round(2.675,2)的结果理应是2.68，但是却是2.67，这不是一个bug，这是一个事实
+，大多数小数和分数不能够被浮点数来完全表示，在计算机中存储是2进制，2.675转换成二进制浮点数时，又被转换成2进制近似值，
+其精确值为：2.67499999999999982236431605997495353221893310546875，因此它的
+round值为2.67
+详见 [Floating Point Arithmetic: Issues and Limitations]
+(https://docs.python.org/2.7/tutorial/floatingpoint.html#tut-fp-issues) 获取更多信息。
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/09/27/简单选择排序/" class="archive-article-date">
-  <time datetime="2017-09-27T23:57:05.000Z" itemprop="datePublished">Sep 27</time>
-</a>
+参考文档：
+    [round函数] (http://docs.python.org/2.7/library/functions.html#round)
+</code></pre>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/27/简单选择排序/">简单选择排序</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/09/27/希尔排序/" class="archive-article-date">
-  <time datetime="2017-09-27T20:01:41.000Z" itemprop="datePublished">Sep 27</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://annuoa.github.io/2017/07/11/Untitled/" data-id="cj50n9v0a0001jmlsvmdkjsf1" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/27/希尔排序/">希尔排序</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/09/27/直接插入排序/" class="archive-article-date">
-  <time datetime="2017-09-27T14:50:08.000Z" itemprop="datePublished">Sep 27</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/27/直接插入排序/">直接插入排序</a>
-    </h1>
-  
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
 
-    </header>
+    </footer>
   </div>
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/09/26/快速排序/" class="archive-article-date">
-  <time datetime="2017-09-26T19:39:17.000Z" itemprop="datePublished">Sep 26</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/26/快速排序/">快速排序</a>
-    </h1>
+
+
   
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/09/25/冒泡排序/" class="archive-article-date">
-  <time datetime="2017-09-25T15:29:30.000Z" itemprop="datePublished">Sep 25</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/25/冒泡排序/">冒泡排序</a>
-    </h1>
-  
 
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
+  <nav id="page-nav">
+    <a class="extend prev" rel="prev" href="/">&laquo; __('prev')</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+  </nav>
 </section>
         
           <aside id="sidebar">
