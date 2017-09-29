@@ -5,17 +5,19 @@
   
   <title>堆排序 | Annuoa</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="基本思想操作方法性质java代码实现堆排序实现过程">
+  <meta name="description" content="基本思想堆排序是指利用堆这种数据结构所设计的一种排序算法，它是选择排序的一种。可以利用数组的特点快速定位指定索引的元素。堆分为大根堆和小根堆，是完全二叉树。大根堆的要求是每个节点的值都不大于其父亲节点的值，即A[PARENT[i]] &amp;gt;= A[i]。在数组的非降序排序中，需要使用的就是大根堆，因为根据大根堆的要求可知，最大的值一定在堆顶，利用这一特性，使得每次从无序中选择最大记录变得简单。">
 <meta name="keywords" content="选择排序 java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="堆排序">
 <meta property="og:url" content="http://annuoa.github.io/2017/09/27/堆排序/index.html">
 <meta property="og:site_name" content="Annuoa">
-<meta property="og:description" content="基本思想操作方法性质java代码实现堆排序实现过程">
-<meta property="og:updated_time" content="2017-09-27T13:23:57.482Z">
+<meta property="og:description" content="基本思想堆排序是指利用堆这种数据结构所设计的一种排序算法，它是选择排序的一种。可以利用数组的特点快速定位指定索引的元素。堆分为大根堆和小根堆，是完全二叉树。大根堆的要求是每个节点的值都不大于其父亲节点的值，即A[PARENT[i]] &amp;gt;= A[i]。在数组的非降序排序中，需要使用的就是大根堆，因为根据大根堆的要求可知，最大的值一定在堆顶，利用这一特性，使得每次从无序中选择最大记录变得简单。">
+<meta property="og:image" content="http://annuoa.github.io/images/堆排序.gif">
+<meta property="og:updated_time" content="2017-09-29T02:05:51.932Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="堆排序">
-<meta name="twitter:description" content="基本思想操作方法性质java代码实现堆排序实现过程">
+<meta name="twitter:description" content="基本思想堆排序是指利用堆这种数据结构所设计的一种排序算法，它是选择排序的一种。可以利用数组的特点快速定位指定索引的元素。堆分为大根堆和小根堆，是完全二叉树。大根堆的要求是每个节点的值都不大于其父亲节点的值，即A[PARENT[i]] &amp;gt;= A[i]。在数组的非降序排序中，需要使用的就是大根堆，因为根据大根堆的要求可知，最大的值一定在堆顶，利用这一特性，使得每次从无序中选择最大记录变得简单。">
+<meta name="twitter:image" content="http://annuoa.github.io/images/堆排序.gif">
   
     <link rel="alternate" href="/atom.xml" title="Annuoa" type="application/atom+xml">
   
@@ -90,7 +92,43 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a><strong>基本思想</strong></h2><h2 id="操作方法"><a href="#操作方法" class="headerlink" title="操作方法"></a><strong>操作方法</strong></h2><h2 id="性质"><a href="#性质" class="headerlink" title="性质"></a><strong>性质</strong></h2><h2 id="java代码实现"><a href="#java代码实现" class="headerlink" title="java代码实现"></a><strong>java代码实现</strong></h2><h2 id="堆排序实现过程"><a href="#堆排序实现过程" class="headerlink" title="堆排序实现过程"></a><strong>堆排序实现过程</strong></h2>
+        <h2 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a><strong>基本思想</strong></h2><p>堆排序是指利用堆这种数据结构所设计的一种排序算法，它是选择排序的一种。可以利用数组的特点快速定位指定索引的元素。堆分为大根堆和小根堆，是完全二叉树。大根堆的要求是每个节点的值都不大于其父亲节点的值，即A[PARENT[i]] &gt;= A[i]。在数组的非降序排序中，需要使用的就是大根堆，因为根据大根堆的要求可知，最大的值一定在堆顶，利用这一特性，使得每次从无序中选择最大记录变得简单。</p>
+<h2 id="操作方法"><a href="#操作方法" class="headerlink" title="操作方法"></a><strong>操作方法</strong></h2><ol>
+<li>将初始待排序关键字序列(R1,R2,……Rn)构建大顶堆，此堆为初始的无序区；</li>
+<li>将堆顶元素R[1]和最后一个元素R[n]交换，此时得到新的无序区(R1,R2,……Rn-1)和新的有序区(Rn),且满足R[1,2,……n-1]&lt;=R[n];</li>
+<li>由于交换后新的堆顶R[1]可能违反堆的性质，因此需要对当前无序区(R1,R2,……Rn-1)调整为新堆，然后再次将R[1]和无序区最后一个元素交换，得到新的无序区(R1，R2，……Rn-2)和新的有序区(Rn-1,Rn)。不断重复此过程知道有序区的元素个数为n-1，则整个排序过程完成。</li>
+</ol>
+<p>备注：</p>
+<ol>
+<li>初始化堆：将R[1..n]构造为堆；</li>
+<li>将当前无序区的堆顶元素R[1]同该区间的最后一个记录交换，然后将新的无序区调整为新的堆。</li>
+</ol>
+<p>因此对于堆排序，最重要的两个操作就是构造初始堆和调整堆，其实构造初始堆事实上也是调整堆的过程，只不过构造初始堆是对所有的非叶节点都进行调整。 </p>
+<h2 id="性质"><a href="#性质" class="headerlink" title="性质"></a><strong>性质</strong></h2><table>
+<thead>
+<tr>
+<th style="text-align:center">分类</th>
+<th style="text-align:center">最差时间复杂度</th>
+<th style="text-align:center">最优时间复杂度</th>
+<th style="text-align:center">平均时间复杂度</th>
+<th style="text-align:center">所需辅助空间</th>
+<th style="text-align:center">稳定性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">内部比较排序</td>
+<td style="text-align:center">O(nlogn)</td>
+<td style="text-align:center">O(nlogn)</td>
+<td style="text-align:center">O(nlogn)</td>
+<td style="text-align:center">O(1)</td>
+<td style="text-align:center">不稳定</td>
+</tr>
+</tbody>
+</table>
+<h2 id="java代码实现"><a href="#java代码实现" class="headerlink" title="java代码实现"></a><strong>java代码实现</strong></h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 上浮</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">swim</span><span class="params">(Comparable[] a, <span class="keyword">int</span> k)</span> </span>&#123;</div><div class="line">	<span class="keyword">while</span> ((k &gt; <span class="number">1</span>) &amp;&amp; (less(a[k], a[k / <span class="number">2</span>]))) &#123;</div><div class="line">		exch(a, k, k / <span class="number">2</span>);</div><div class="line">		k = k / <span class="number">2</span>;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 下沉</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sink</span><span class="params">(Comparable[] a, <span class="keyword">int</span> k, <span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">	<span class="keyword">while</span> (<span class="number">2</span> * k &lt;= n) &#123;</div><div class="line">		<span class="keyword">int</span> j = <span class="number">2</span> * k;</div><div class="line">		<span class="keyword">if</span> (j &lt; n &amp;&amp; less(a[j], a[j + <span class="number">1</span>])) &#123;</div><div class="line">			j++;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">if</span> (!less(a[k], a[j])) &#123;</div><div class="line">			<span class="keyword">break</span>;</div><div class="line">		&#125;</div><div class="line">		exch(a, k, j);</div><div class="line">		k = j;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// less函数</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">less</span><span class="params">(Comparable a, Comparable b)</span> </span>&#123;</div><div class="line">	<span class="keyword">return</span> a.compareTo(b) &lt; <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">// exch函数</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">exch</span><span class="params">(Comparable[] a, <span class="keyword">int</span> i, <span class="keyword">int</span> j)</span> </span>&#123;</div><div class="line">	Comparable temp;</div><div class="line">	temp = a[i];</div><div class="line">	a[i] = a[j];</div><div class="line">	a[j] = temp;</div><div class="line">&#125;</div><div class="line"><span class="comment">// show函数</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">(Comparable[] a)</span> </span>&#123;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; a.length; i++) &#123;</div><div class="line">		System.out.print(a[i] + <span class="string">"\t"</span>);</div><div class="line">	&#125;</div><div class="line">	System.out.println();</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sortHeap</span><span class="params">(Comparable[] a)</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> n = a.length - <span class="number">1</span>;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> k = n / <span class="number">2</span>; k &gt;= <span class="number">1</span>; k--) &#123;</div><div class="line">		sink(a, k, n);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">while</span> (n &gt;= <span class="number">1</span>) &#123;</div><div class="line">		exch(a, <span class="number">1</span>, n--);</div><div class="line">		sink(a, <span class="number">1</span>, n);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="堆排序实现过程"><a href="#堆排序实现过程" class="headerlink" title="堆排序实现过程"></a><strong>堆排序实现过程</strong></h2><p><img src="/images/堆排序.gif" alt=""></p>
+
       
     </div>
     <footer class="article-footer">
