@@ -61,6 +61,107 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-其他排序" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/10/10/其他排序/" class="article-date">
+  <time datetime="2017-10-10T21:40:03.000Z" itemprop="datePublished">2017-10-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/SORT/">SORT</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/10/其他排序/">其他排序</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="基数排序"><a href="#基数排序" class="headerlink" title="基数排序"></a>基数排序</h2><blockquote>
+<p>基数排序属于分配式排序，又称“桶子法”。以前研究的各种排序算法，都是通过比较数据大小的方法对与排数据序列进行排序整理过程，而基数排序不同，它是根据关键字中各位的值，通过对排序的N个元素进行若干趟“分配”与“收集”来实现排序的。</p>
+</blockquote>
+<p><strong>举例</strong></p>
+<pre><code>(1) 假设有欲排数据序列如下所示：
+73  22  93  43  55  14  28  65  39  81
+首先根据个位数的数值，在遍历数据时将它们各自分配到编号0至9的桶（个位数值与桶号一一对应）中。
+</code></pre><p>分配结果（逻辑想象）如下图所示：</p>
+<p><img src="/images/基数排序.png" alt=""></p>
+<p>分配结束后，接下来将所有桶中所盛数据按照桶号由小到大（桶中由顶至底）依次重新收集串起来，得到如下仍然无序的数据序列：</p>
+<p>81  22  73  93  43  14  55  65  28  39<br>接着，再进行一次分配，这次根据十位数值来分配（原理同上），分配结果如下所示：</p>
+<p><img src="/images/基数2.png" alt=""></p>
+<p>分配结束后。接下来再将所有桶中所盛的数据依次重新收集串起来，得到如下的数据序列：</p>
+<p>14  22  28  39  43  55  65  73  81  93</p>
+<p>观察可以看到，此时原无序数据序列已经排序完毕。如果排序的数据序列有三位数以上的数据，则重复进行以上的动作直至最高位数为止。</p>
+<p><strong>基数排序分类</strong></p>
+<p>基于两种不同的排序顺序，我们将基数排序分为LSD(Least significant digital) 或MSD(Most significant digital),LSD的排序方式由数值的最右边(低位)开始，而MSD则相反，由数值的最左边(高位)开始</p>
+<p><strong>性能</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">排序类别</th>
+<th style="text-align:center">平均时间复杂度</th>
+<th style="text-align:center">最坏时间复杂度</th>
+<th style="text-align:center">最优时间复杂度</th>
+<th style="text-align:center">空间复杂度</th>
+<th style="text-align:center">稳定性</th>
+<th style="text-align:center">复杂性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">基数排序</td>
+<td style="text-align:center">O(d(n+r))</td>
+<td style="text-align:center">O(d(n+r))</td>
+<td style="text-align:center">O(d(n+r))</td>
+<td style="text-align:center">O(n+r)</td>
+<td style="text-align:center">稳定</td>
+<td style="text-align:center">较复杂</td>
+</tr>
+</tbody>
+</table>
+<h2 id="拓扑排序"><a href="#拓扑排序" class="headerlink" title="拓扑排序"></a>拓扑排序</h2><blockquote>
+<p>在图论中，拓扑排序（Topological Sorting）是一个有向无环图（DAG,Directed Acyclic Graph）的所有定点的线性序列。且该序列必须满足两个条件：</p>
+</blockquote>
+<ol>
+<li>每个定点出现且只出现一次。</li>
+<li>若存在一条从顶点A到顶点B的路径，那么在序列中顶点A出现在顶点B的前面。</li>
+</ol>
+<p>有向无环图（DAG）才有拓扑排序，非DAG图没有拓扑 排序一说，例如：</p>
+<p><img src="/images/拓扑图.png" alt=""></p>
+<p>它是一个DAG图，那么如何写出它的拓扑排序呢？一种常用的方法：</p>
+<ol>
+<li>从DAG图中选择一个没有前驱（即入度为0）的顶点并输出。</li>
+<li>从图中删除该顶点和所有以它为起点的有向边。</li>
+<li>重复1和2直到当前的DAG图为空或<strong>当前图中不存在无前驱的顶点为止</strong>。后一种情况说明有向图中必然存在环。</li>
+</ol>
+<p><img src="/images/拓扑2.png" alt=""></p>
+<p>于是，得到拓扑排序的结果是{1,2,4,3,5}。<br>通常，一个有向无环图可以有<strong>一个或多个</strong>拓扑排序序列。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://annuoa.github.io/2017/10/10/其他排序/" data-id="cj8lkbae9001yb9lsuvmeafd6" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/基数排序、-拓扑排序/">基数排序、 拓扑排序</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-排序小结" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/10/09/排序小结/" class="article-date">
@@ -871,43 +972,6 @@
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Markdown-小知识/">Markdown 小知识</a></li></ul>
 
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-待查知识点" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/08/03/待查知识点/" class="article-date">
-  <time datetime="2017-08-03T14:45:21.015Z" itemprop="datePublished">2017-08-03</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/03/待查知识点/">待查知识点</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>1、java判断是否为无效、损坏图片url：<br>2、json解析和增删改查；json写入是会存在\u002d,\u002e等解析不出来需要自己手动解析</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://annuoa.github.io/2017/08/03/待查知识点/" data-id="cj7zyvrv90003b9lswu1jcw7m" class="article-share-link">Share</a>
-      
-      
     </footer>
   </div>
   
