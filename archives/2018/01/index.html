@@ -3,21 +3,14 @@
 <head>
   <meta charset="utf-8">
   
-  <title>直接插入排序 | Annuoa</title>
+  <title>Archives: 2018/1 | Annuoa</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="基本思想 每步将一个待排序的记录，按照其关键码值的大小插入前面已经排序的文件中适当的位置，知道全部插入为止。插入排序方法分直接插入排序和折半插入排序两种，这里只介绍直接插入排序。  操作方法  从第一个元素开始，该元素可以认为已经被排序； 取出下一个元素，在已经排序的元素序列中从后向前扫描； 如果该元素(已排序)大于新元素，将该元素移到下一位置 重复步骤3，直到找到已排序的元素小于或者等于新元素的">
-<meta name="keywords" content="插入排序 java">
-<meta property="og:type" content="article">
-<meta property="og:title" content="直接插入排序">
-<meta property="og:url" content="http://annuoa.github.io/2017/09/27/直接插入排序/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Annuoa">
+<meta property="og:url" content="http://annuoa.github.io/archives/2018/01/index.html">
 <meta property="og:site_name" content="Annuoa">
-<meta property="og:description" content="基本思想 每步将一个待排序的记录，按照其关键码值的大小插入前面已经排序的文件中适当的位置，知道全部插入为止。插入排序方法分直接插入排序和折半插入排序两种，这里只介绍直接插入排序。  操作方法  从第一个元素开始，该元素可以认为已经被排序； 取出下一个元素，在已经排序的元素序列中从后向前扫描； 如果该元素(已排序)大于新元素，将该元素移到下一位置 重复步骤3，直到找到已排序的元素小于或者等于新元素的">
-<meta property="og:image" content="http://annuoa.github.io/images/插入排序.gif">
-<meta property="og:updated_time" content="2017-09-28T02:47:44.097Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="直接插入排序">
-<meta name="twitter:description" content="基本思想 每步将一个待排序的记录，按照其关键码值的大小插入前面已经排序的文件中适当的位置，知道全部插入为止。插入排序方法分直接插入排序和折半插入排序两种，这里只介绍直接插入排序。  操作方法  从第一个元素开始，该元素可以认为已经被排序； 取出下一个元素，在已经排序的元素序列中从后向前扫描； 如果该元素(已排序)大于新元素，将该元素移到下一位置 重复步骤3，直到找到已排序的元素小于或者等于新元素的">
-<meta name="twitter:image" content="http://annuoa.github.io/images/插入排序.gif">
+<meta name="twitter:title" content="Annuoa">
   
     <link rel="alternate" href="/atom.xml" title="Annuoa" type="application/atom+xml">
   
@@ -66,103 +59,39 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-直接插入排序" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/09/27/直接插入排序/" class="article-date">
-  <time datetime="2017-09-27T14:50:08.000Z" itemprop="datePublished">2017-09-27</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/SORT/">SORT</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+        <section id="main">
   
-    <h1 class="article-title" itemprop="name">
-      直接插入排序
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2018" class="archive-year">2018</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2018/01/24/日常电脑小知识/" class="archive-article-date">
+  <time datetime="2018-01-24T11:36:16.189Z" itemprop="datePublished">Jan 24</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2018/01/24/日常电脑小知识/">日常电脑小知识</a>
     </h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a><strong>基本思想</strong></h2><blockquote>
-<p>每步将一个待排序的记录，按照其关键码值的大小插入前面已经排序的文件中适当的位置，知道全部插入为止。插入排序方法分直接插入排序和折半插入排序两种，这里只介绍直接插入排序。</p>
-</blockquote>
-<h2 id="操作方法"><a href="#操作方法" class="headerlink" title="操作方法"></a><strong>操作方法</strong></h2><blockquote>
-<ol>
-<li>从第一个元素开始，该元素可以认为已经被排序；</li>
-<li>取出下一个元素，在已经排序的元素序列中从后向前扫描；</li>
-<li>如果该元素(已排序)大于新元素，将该元素移到下一位置</li>
-<li>重复步骤3，直到找到已排序的元素小于或者等于新元素的位置</li>
-<li>将新元素插入到该位置后</li>
-<li>重复步骤2~5</li>
-</ol>
-</blockquote>
-<h2 id="性质"><a href="#性质" class="headerlink" title="性质"></a><strong>性质</strong></h2><table>
-<thead>
-<tr>
-<th>分类</th>
-<th style="text-align:center">最差时间复杂度</th>
-<th style="text-align:center">最优时间复杂度</th>
-<th style="text-align:center">平均时间复杂度</th>
-<th style="text-align:center">所需辅助时间</th>
-<th style="text-align:center">稳定性</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>内部比较排序</td>
-<td style="text-align:center">O(n^2)</td>
-<td style="text-align:center">O(n)</td>
-<td style="text-align:center">O(n^2)</td>
-<td style="text-align:center">O(1)</td>
-<td style="text-align:center">稳定</td>
-</tr>
-</tbody>
-</table>
-<h2 id="java代码实现"><a href="#java代码实现" class="headerlink" title="java代码实现"></a><strong>java代码实现</strong></h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">insertionSort</span><span class="params">(Comparable[]a)</span></span>&#123;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; a.length; i++) &#123;</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = i; (j &gt;<span class="number">0</span>)&amp;&amp;(less(a[j], a[j-<span class="number">1</span>])); j--) &#123;<span class="comment">//注意边界条件j&gt;0</span></div><div class="line">			exch(a, j-<span class="number">1</span>, j);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="直接插入排序的实现过程"><a href="#直接插入排序的实现过程" class="headerlink" title="直接插入排序的实现过程"></a><strong>直接插入排序的实现过程</strong></h2><p><img src="/images/插入排序.gif" alt=""></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://annuoa.github.io/2017/09/27/直接插入排序/" data-id="cj82qf24p000nb9lsy20zalxh" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/插入排序-java/">插入排序 java</a></li></ul>
-
-    </footer>
+    </header>
   </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2017/09/27/希尔排序/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          希尔排序
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2017/09/26/快速排序/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">快速排序</div>
-    </a>
-  
-</nav>
-
-  
 </article>
+  
+  
+    </div></section>
+  
 
 </section>
         
